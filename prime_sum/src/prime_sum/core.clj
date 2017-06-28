@@ -8,7 +8,7 @@
 (def prime-seq (filter #(is-prime? prime-seq %) (cons 2 (iterate (partial + 2) 3))))
 
 (defn sum* [n]
-  (reduce #(+ %1 %2) 0 (take-while #(< % 2000000) prime-seq)))
+  (reduce + (take-while #(< % 2000000) prime-seq)))
 
 (defn -main
   "Find the sum of all prime numbers below 2,000,000"
